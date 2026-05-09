@@ -136,7 +136,6 @@ export async function fetchForecast(lat: number, lon: number): Promise<ForecastD
   });
 
   const daily: DailyForecast[] = Array.from(dailyMap.entries()).map(([, items]) => {
-    const temps = items.map((i) => i.main.temp);
     // Pick midday entry for representative condition
     const midday = items[Math.floor(items.length / 2)];
     return {
